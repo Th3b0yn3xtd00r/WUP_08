@@ -20,7 +20,7 @@ bears$MONTH<- as.factor(bears$MONTH)
 
 ## Model LENGTH ~ NECK  this is an example  
 
-We are going to compute regression models finding one regression model that does the best job in predicting the bear length and its correspondence to the bears neck size, age, head width, head length, and 
+We are going to compute regression models finding one regression model that does the best job in predicting the bear length and its correspondence to the bears neck size, age, head width, head length, and WEIGHT
 
 ```{r}
 simp <- lm(LENGTH~NECK,data=bears)
@@ -59,3 +59,12 @@ summary.lm(simp)
 ```
 
 The adjusted r squared for AGE is 0.5073.
+
+```{r}
+simp <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+The adjusted r squared for WEIGHT is 0.7423.
