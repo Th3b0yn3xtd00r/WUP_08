@@ -20,6 +20,8 @@ bears$MONTH<- as.factor(bears$MONTH)
 
 ## Model LENGTH ~ NECK  this is an example  
 
+We are going to compute regression models finding one regression model that does the best job in predicting the bear length and its correspondence to the bears neck size, age, head width, head length, and 
+
 ```{r}
 simp <- lm(LENGTH~NECK,data=bears)
 plot(LENGTH~NECK,data=bears)
@@ -28,5 +30,10 @@ summary.lm(simp)
 ```
 
 
+
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
+
+```{r}
+lm(formula = LENGTH ~ HEADLEN, data = bears)
+```
 
