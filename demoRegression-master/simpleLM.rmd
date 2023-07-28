@@ -34,6 +34,10 @@ the adjusted r squared that is the largest is best. The neck size which is 0.747
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
 
 ```{r}
-lm(formula = LENGTH ~ HEADLEN, data = bears)
+simp <- lm(LENGTH~NECK,data=bears)
+plot(LENGTH~NECK,data=bears)
+abline(simp)
+summary.lm(simp)
 ```
 
+the adjusted r squared that is the largest is best. The neck size which is 0.8434
